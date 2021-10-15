@@ -1,10 +1,11 @@
-import numpy
 import math
+
+import numpy as np
 
 
 def softmax(in_matrix):
-    m, n = numpy.shape(in_matrix)
-    out_matrix = numpy.mat(numpy.zeros((m, n)))
+    m, n = np.shape(in_matrix)
+    out_matrix = np.mat(np.zeros((m, n)))
     soft_sum = 0
     for idx in range(0, n):
         out_matrix[0, idx] = math.exp(in_matrix[0, idx])
@@ -15,6 +16,6 @@ def softmax(in_matrix):
 
     return out_matrix
 
-
-a = numpy.array([[1, 2, 1, 2, 1, 1, 3]])
-print(softmax(a))
+if __name__ == "__main__":
+    a = np.array([[1, 2, 1, 2, 1, 1, 3]])
+    print(softmax(a))
